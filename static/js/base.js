@@ -16,7 +16,7 @@
             };
 
             try {
-                const response = await fetch('/todos/todo', {
+                const response = await fetch('/todos/todos', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -27,6 +27,7 @@
 
                 if (response.ok) {
                     form.reset(); // Clear the form
+                    window.location.href = '/todos/todo-page'; // Redirect to the todo page
                 } else {
                     // Handle error
                     const errorData = await response.json();
